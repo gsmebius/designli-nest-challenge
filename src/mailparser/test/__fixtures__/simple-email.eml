@@ -1,0 +1,8 @@
+From: test@example.com
+To: receiver@example.com
+Subject: Mock email
+Content-Type: text/plain
+
+Este es un correo de prueba con algunos enlaces:
+https://jsonplaceholder.typicode.com/posts/1
+https://jsonplaceholder.typicode.com/todos/1
