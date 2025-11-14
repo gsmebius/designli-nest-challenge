@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 Designli Nest Challenge
 
 > **A powerful, feature-rich API built with NestJS for data mapping and email parsing.**
 
@@ -69,8 +69,6 @@ A Postman Collection is provided to allow developers and QA professionals to eas
 
 The API is fully documented using Swagger (OpenAPI), which provides an interactive UI for exploring endpoints, data models, request bodies, and responses.
 
-Access the documentation by navigating to:
-
-$${{\{BaseURL\}}/\text{api/}$$
+Access the documentation by navigating to: {{BaseURL}}/api
 
 Note: Replace $\text{\{BaseURL\}}$ with the host and port of your running NestJS application (e.g., http://localhost:3000).
