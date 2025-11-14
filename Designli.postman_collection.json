@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "525e65ba-fe33-42c9-b578-1b65b9413683",
+		"name": "Designli",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21734494"
+	},
+	"item": [
+		{
+			"name": "mail-parser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/mail-parser?path=documents/mail.eml",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"mail-parser"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "documents/mail.eml"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mapper",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Records\": [\n    {\n      \"eventVersion\": \"1.0\",\n      \"ses\": {\n        \"receipt\": {\n          \"timestamp\": \"2015-09-11T20:32:33.936Z\",\n          \"processingTimeMillis\": 1222,\n          \"recipients\": [\n            \"recipient@example.com\"\n          ],\n          \"spamVerdict\": {\n            \"status\": \"PASS\"\n          },\n          \"virusVerdict\": {\n            \"status\": \"PASS\"\n          },\n          \"spfVerdict\": {\n            \"status\": \"PASS\"\n          },\n          \"dkimVerdict\": {\n            \"status\": \"PASS\"\n          },\n          \"dmarcVerdict\": {\n            \"status\": \"PASS\"\n          },\n          \"dmarcPolicy\": \"reject\",\n          \"action\": {\n            \"type\": \"SNS\",\n            \"topicArn\": \"arn:aws:sns:us-east-1:012345678912:example-topic\"\n          }\n        },\n        \"mail\": {\n          \"timestamp\": \"2015-11-11T20:32:33.936Z\",\n          \"source\": \"sender@example.com\",\n          \"messageId\": \"d6iitobk75ur44p8kdnnp7g2n800\",\n          \"destination\": [\n            \"recipient@example.com\"\n          ],\n          \"headersTruncated\": false,\n          \"headers\": [\n            {\n              \"name\": \"Return-Path\",\n              \"value\": \"<0000014fbe1c09cf-7cb9f704-7531-4e53-89a1-5fa9744f5eb6-000000@amazonses.com>\"\n            },\n            {\n              \"name\": \"Received\",\n              \"value\": \"from a9-183.smtp-out.amazonses.com (a9-183.smtp-out.amazonses.com [54.240.9.183]) by inbound-smtp.us-east-1.amazonaws.com with SMTP id d6iitobk75ur44p8kdnnp7g2n800 for recipient@example.com; Fri, 11 Sep 2015 20:32:33 +0000 (UTC)\"\n            },\n            {\n              \"name\": \"DKIM-Signature\",\n              \"value\": \"v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1442003552; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Date:Message-ID:Feedback-ID; bh=DWr3IOmYWoXCA9ARqGC/UaODfghffiwFNRIb2Mckyt4=; b=p4ukUDSFqhqiub+zPR0DW1kp7oJZakrzupr6LBe6sUuvqpBkig56UzUwc29rFbJF hlX3Ov7DeYVNoN38stqwsF8ivcajXpQsXRC1cW9z8x875J041rClAjV7EGbLmudVpPX 4hHst1XPyX5wmgdHIhmUuh8oZKpVqGi6bHGzzf7g=\"\n            },\n            {\n              \"name\": \"From\",\n              \"value\": \"sender@example.com\"\n            },\n            {\n              \"name\": \"To\",\n              \"value\": \"recipient@example.com\"\n            },\n            {\n              \"name\": \"Subject\",\n              \"value\": \"Example subject\"\n            },\n            {\n              \"name\": \"MIME-Version\",\n              \"value\": \"1.0\"\n            },\n            {\n              \"name\": \"Content-Type\",\n              \"value\": \"text/plain; charset=UTF-8\"\n            },\n            {\n              \"name\": \"Content-Transfer-Encoding\",\n              \"value\": \"7bit\"\n            },\n            {\n              \"name\": \"Date\",\n              \"value\": \"Fri, 11 Sep 2015 20:32:32 +0000\"\n            },\n            {\n              \"name\": \"Message-ID\",\n              \"value\": \"<61967230-7A45-4A9D-BEC9-87CBCF2211C9@example.com>\"\n            },\n            {\n              \"name\": \"X-SES-Outgoing\",\n              \"value\": \"2015.09.11-54.240.9.183\"\n            },\n            {\n              \"name\": \"Feedback-ID\",\n              \"value\": \"1.us-east-1.Krv2FKpFdWV+KUYw3Qd6wcpPJ4Sv/pOPpEPSHn2u2o4=:AmazonSES\"\n            }\n          ],\n          \"commonHeaders\": {\n            \"returnPath\": \"0000014fbe1c09cf-7cb9f704-7531-4e53-89a1-5fa9744f5eb6-000000@amazonses.com\",\n            \"from\": [\n              \"sender@example.com\"\n            ],\n            \"date\": \"Fri, 11 Sep 2015 20:32:32 +0000\",\n            \"to\": [\n              \"recipient@example.com\"\n            ],\n            \"cc\": [\n              \"cc@example.com\",\n              \"cc2@example.com\"\n            ],\n            \"messageId\": \"<61967230-7A45-4A9D-BEC9-87CBCF2211C9@example.com>\",\n            \"subject\": \"Example subject\"\n          }\n        }\n      },\n      \"eventSource\": \"aws:ses\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/mapper",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"mapper"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
