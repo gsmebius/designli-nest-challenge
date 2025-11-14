@@ -1,0 +1,37 @@
+From: sender@example.com
+To: recipient@example.com
+Subject: Prueba completa funcional
+Date: Tue, 12 Nov 2025 12:00:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary123"
+
+--boundary123
+Content-Type: text/plain; charset="UTF-8"
+
+Hola, este es un correo de prueba funcional.
+
+Links directos a JSON:
+https://jsonplaceholder.typicode.com/todos/1
+https://jsonplaceholder.typicode.com/users/1
+
+
+--boundary123
+Content-Type: application/json
+Content-Disposition: attachment; filename="attachment1.json"
+
+{"ok":true,"message":"JSON como attachment 1"}
+
+--boundary123
+Content-Type: application/json
+Content-Disposition: attachment; filename="attachment2.json"
+
+{"ok":true,"message":"JSON como attachment 2"}
+
+--boundary123
+Content-Type: text/plain
+Content-Disposition: attachment; filename="attachment-text.txt"
+
+Este es un attachment de texto plano que contiene un link a JSON:
+https://jsonplaceholder.typicode.com/posts/1
+
+--boundary123--
